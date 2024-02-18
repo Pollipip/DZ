@@ -25,3 +25,19 @@ int N = Convert.ToInt32(Console.ReadLine());
     Console.Write(M + " ");
     ShowNumbers(M + 1, N); // start = M, end = N
     }
+
+
+// Напишите программу вычисления функции Аккермана с помощью рекурсии. Даны два неотрицательных числа m и n.
+
+int FuncAkkerman(int n, int m)
+{
+if (n == 0) return m + 1;
+else if (m == 0) return FuncAkkerman(n - 1, 1);
+else return FuncAkkerman(n - 1, FuncAkkerman(n, m - 1)); // Ввели условия из псевдокода
+}
+Console.Write("Введите значение n: ");
+int m = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите значение m: ");
+int n = Convert.ToInt32(Console.ReadLine());
+
+Console.Write($"Ответ {FuncAkkerman(m, n)} ");
