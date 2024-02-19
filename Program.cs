@@ -41,3 +41,32 @@ Console.Write("Введите значение m: ");
 int n = Convert.ToInt32(Console.ReadLine());
 
 Console.Write($"Ответ {FuncAkkerman(m, n)} ");
+
+
+// Задача 3: Задайте произвольный массив. Выведете его элементы, начиная с конца. Использовать рекурсию, не использовать циклы.
+
+using System;
+class RevStr 
+{
+   public void PrintReverseArray(string array) // символьный массив void
+  {
+    if (array.Length > 0)
+      PrintReverseArray(array.Substring(1, array.Length - 1));
+    else
+      return;
+    Console.Write(array[0]);
+  }
+}
+class EnterArray 
+{
+  static void Main() {
+    string s = "125964"; // задаем произвольный массив (из любых символов)
+
+RevStr array = new RevStr();
+
+    Console.WriteLine("Начальный порядок символов: " + s);
+    Console.Write("Обратный порядок символов: ");
+    array.PrintReverseArray(s);
+    Console.WriteLine();
+  }
+}
